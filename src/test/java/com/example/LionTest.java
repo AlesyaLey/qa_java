@@ -34,10 +34,16 @@ public class LionTest {
 
     @Test(expected = Exception.class)
     public void getSexLionReturnsException() throws Exception {
-        Lion lion = new Lion(feline,"ОНО");
+        Lion lion;
         String expectedValue = "Используйте допустимые значения пола животного - самец или самка";
-        boolean actualValue = lion.doesHaveMane();
-        Assert.assertEquals(expectedValue, actualValue);
+        Exception exception = null;
+        try {
+            new Lion(feline,"ОНО");
+        } catch (Exception ex) {
+            exception = ex;
+        }
+        Assert.assertNotNull(exception);
+        Assert.assertEquals(expectedValue, exception.getMessage());
     }
 
     @Test

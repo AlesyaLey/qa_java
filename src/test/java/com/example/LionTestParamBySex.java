@@ -1,16 +1,23 @@
 package com.example;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.List;
 
-@RunWith(Parameterized.class)
 
+@RunWith(Parameterized.class)
 public class LionTestParamBySex{
+
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
 
     @Mock
     Feline feline;

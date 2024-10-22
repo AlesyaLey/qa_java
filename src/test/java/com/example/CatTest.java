@@ -12,8 +12,6 @@ import static org.mockito.Mockito.lenient;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
-    List<String> expectedFood1;
-
     @Test
     public void getSoundCat() {
         Cat cat = new Cat(new Feline());
