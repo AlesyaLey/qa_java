@@ -20,15 +20,13 @@ public class CatTest {
         Assert.assertEquals(expectedSound, actualSound);
     }
 
-    @Mock
-    Predator predator;
+     @Mock
+     Feline felineMock;
 
     @Test
-    public void getFoodCat() throws Exception {
-        Cat cat = new Cat(new Feline());
-        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
-        Mockito.lenient().when(predator.eatMeat()).thenReturn(expectedFood);
-        List<String> actualFood = cat.getFood();
-        Assert.assertEquals(expectedFood, actualFood);
+    public void getFoodCatByFeline() throws Exception {
+        Cat cat = new Cat(felineMock);
+        Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Мясо"));
+        Assert.assertEquals(List.of("Мясо"),cat.getFood());
     }
 }

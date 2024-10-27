@@ -37,14 +37,17 @@ public class LionTest {
         Lion lion;
         String expectedValue = "Используйте допустимые значения пола животного - самец или самка";
         Exception exception = null;
+        String s = "";
         try {
             new Lion(feline,"ОНО");
         } catch (Exception ex) {
             exception = ex;
+            s = exception.getMessage();
+            System.out.println(s);
         }
         Assert.assertNotNull(exception);
         Assert.assertEquals(expectedValue, exception.getMessage());
-    }
+       }
 
     @Test
     public void getFoodLionForFemale() throws Exception {
